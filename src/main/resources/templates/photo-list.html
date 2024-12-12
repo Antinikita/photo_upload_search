@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/photo/search}" method="get">
+    <input type="text" name="query" placeholder="search">
+    <button type="submit">search</button>
+</form>
+<table>
+    <tr>
+        <th> Image</th>
+        <th>Desc</th>
+    </tr>
+    <tr th:each="photo:${photos}">
+        <td><img th:src="@{'/image/'+${photo.title}}" alt="img" width="100"></td>
+        <td th:text="${photo.description}"></td>
+    </tr>
+</table>
+<a th:href="@{/photo/upload}">Upload New Image</a>
+</body>
+</html>

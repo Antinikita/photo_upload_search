@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form th:action="@{/photo/upload}" method="post" enctype="multipart/form-data">
+    <label for="file"> Photo:</label>
+    <input id="file" name="file" type="file" required><br>
+    <label for="desc">Desc:</label>
+    <input id="desc" type="text" name="desc">
+    <button type="submit">Upload</button>
+  </form>
+<a th:href="@{/photo}">Back to list</a>
+</body>
+</html>
